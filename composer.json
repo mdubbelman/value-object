@@ -1,0 +1,29 @@
+{
+    "name": "bluebirdday/valueobject",
+    "description": "ValueObjects repository",
+    "authors": [
+        {
+            "name": "Martin Dubbelman",
+            "email": "mdubbelman@gbluebirdday.nl"
+        }
+    ],
+    "require": {
+        "php": "~7.0",
+        "beberlei/assert": "^2.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "BluebirdDay\\ValueObject\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "tests\\BluebirdDay\\ValueObject\\": "tests/src/"
+        }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.0",
+        "squizlabs/php_codesniffer": "^3.2",
+        "phpunit/phpunit": "^6"
+    }
+}
