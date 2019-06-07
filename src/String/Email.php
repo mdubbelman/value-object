@@ -1,4 +1,5 @@
 <?php
+
 namespace BluebirdDay\ValueObject\String;
 
 use Assert\Assertion;

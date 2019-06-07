@@ -15,13 +15,7 @@ class Integer extends AbstractValueObject
     public function __construct(int $int)
     {
         Assertion::integer($int);
-
         parent::__construct($int);
-    }
-
-    public static function fromValue($value)
-    {
-        return new self($value);
     }
 
     public function __toString()

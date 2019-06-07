@@ -11,6 +11,11 @@ abstract class AbstractValueObject
         $this->value = $value;
     }
 
+    public static function fromValue($value)
+    {
+        return new static($value);
+    }
+
     /**
      * @return string
      */

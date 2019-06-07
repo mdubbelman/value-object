@@ -17,6 +17,12 @@ class StringObject extends AbstractValueObject
         parent::__construct($string);
     }
 
+    /**
+     * @param $string
+     *
+     * @return \BluebirdDay\ValueObject\String\StringObject
+     * @throws \Assert\AssertionFailedException
+     */
     public static function fromString($string)
     {
         return new static($string);

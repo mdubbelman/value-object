@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mdubbelman
- * Date: 06/04/2018
- * Time: 23:30
- */
 
 namespace BluebirdDay\ValueObject\Number;
 

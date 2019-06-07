@@ -9,9 +9,8 @@ class Password extends StringObject
     public static $minLength = 6;
     public static $maxLength = 64;
 
-    public function __construct($string)
+    public function __construct(string $string)
     {
-        Assertion::string($string);
         Assertion::minLength(
             $string,
             static::$minLength,
@@ -34,6 +33,6 @@ class Password extends StringObject
             }
         );
         
-        $this->string = $string;
+        parent::__construct($string);
     }
 }

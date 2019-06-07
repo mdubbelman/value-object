@@ -1,25 +1,36 @@
 <?php
 namespace BluebirdDay\ValueObject\Date;
 
-use BluebirdDay\ValueObject\ValueObjectInterface;
+use BluebirdDay\ValueObject\AbstractValueObject;
 
-class DateTime implements ValueObjectInterface
+class DateTime extends AbstractValueObject
 {
     /** @var  \DateTime */
     protected $date;
 
-    public static $dateFormat = 'Y-m-d H:i:s';
+    protected $dateFormat = 'Y-m-d H:i:s';
 
     /**
      * @param \DateTime $date
+     *
+     * @throws \Exception
      */
     public function __construct($date = null)
     {
         if ($date instanceof \DateTime) {
             $this->date = $date;
         } else {
-            $this->date = new \DateTime($date);
+            try {
+                $this->date = new \DateTime($date);
+            } catch (\Exception $e) {
+                throw new \InvalidArgumentException('Invalid date provided: ' . $date);
+            }
         }
+    }
+
+    public function setDateFormate(string $format)
+    {
+        $this->dateFormat = $format;
     }
 
     /**
@@ -27,11 +38,12 @@ class DateTime implements ValueObjectInterface
      */
     public function __toString()
     {
-        return $this->date->format(static::$dateFormat);
+        return $this->date->format($this->dateFormat);
     }
 
     /**
      * @return $this
+     * @throws \Exception
      */
     public function setToNow()
     {
